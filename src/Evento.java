@@ -75,6 +75,9 @@ public class Evento implements ActionListener {
 			if (turno) { //true = bianco
 				System.out.println("Secondo click " + newX + " " + newY);
 				if(scacchiera.CheckPedina(pedina, newX, newY)) {
+					int oldX = pedina.getX();
+					int oldY = pedina.getY();
+					pedina.setCoordinate(10, 10);
 					if (scacchiera.ScaccoSubito(reBianco) == false) {
 						scacchiera.setPosition(pedina, newX, newY);
 						scacchiera.setVoid(pedina.getX(), pedina.getY());
@@ -85,10 +88,15 @@ public class Evento implements ActionListener {
 						b = !b;
 						System.out.println("Nuova posizione della pedina selezionata: " + pedina.getX() + " " + pedina.getY());
 					}
+				else
+					pedina.setCoordinate(oldX, oldY);
 				}
 			}
 			else {
 				if(scacchiera.CheckPedina(pedina, newX, newY)) {
+					int oldX = pedina.getX();
+					int oldY = pedina.getY();
+					pedina.setCoordinate(10, 10);
 					if (scacchiera.ScaccoSubito(reBianco) == false) {
 						scacchiera.setPosition(pedina, newX, newY);
 						scacchiera.setVoid(pedina.getX(), pedina.getY());
@@ -98,6 +106,8 @@ public class Evento implements ActionListener {
 						scacchiera.Elimina(pedina, newX, newY);
 						b = !b;
 					}
+				else
+					pedina.setCoordinate(oldX, oldY);
 				}
 			}
 		}
