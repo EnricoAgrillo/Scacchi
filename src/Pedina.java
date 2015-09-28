@@ -6,7 +6,7 @@ public class Pedina {
 	private Colore colore;
 	private Pezzo pedina;
 
-	public Pedina() {
+	public Pedina() { 
 	}
 	
 	public Pedina(int x, int y, Colore colore, Pezzo pedina){
@@ -30,6 +30,10 @@ public class Pedina {
 	
 	public Pezzo getType() {
 		return pedina;
+	}
+	
+	public void setTypePedina(Pezzo pezzo) {
+		this.pedina = pezzo;
 	}
 	
 	public void setCoordinate(int x, int y) {

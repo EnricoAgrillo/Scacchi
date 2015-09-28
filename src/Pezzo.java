@@ -7,5 +7,4 @@ public enum Pezzo {
 	Alfiere,
 	Cavallo,
 	Vuoto,
-	Pedina
 };
